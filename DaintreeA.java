@@ -18,9 +18,10 @@ public class DaintreeA {
         while (running) {
             printMenu();
             int userInput = input.nextInt();
-            System.out.println("You input " + userInput + "\n");
             if (userInput == 0) {
                 running = false;
+            } else {
+                checkInput(userInput);
             }
         }
     }
@@ -34,5 +35,28 @@ public class DaintreeA {
         System.out.println("5. List all books");
         System.out.println("0. Quit");
         System.out.print("Please make a selection: ");
+    }
+
+    public void checkInput(int input){
+        switch (input){
+            case 1:
+                System.out.println("You input 1");
+                break;
+            case 2:
+                System.out.println("You input 2");
+                break;
+            case 3:
+                System.out.println("You input 3");
+                break;
+            case 4:
+                System.out.println("You input 4");
+                break;
+            case 5:
+                System.out.println("You input 5");
+                break;
+            default:
+                System.out.println("Enter only 1,2,3,4,5,0");
+                break;
+        }
     }
 }
