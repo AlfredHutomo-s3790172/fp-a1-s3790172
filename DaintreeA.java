@@ -1,16 +1,19 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class DaintreeA {
+    static Scanner input = new Scanner(System.in);
+    static String[] bookTitles = {"Absolute Java", "JAVA: How to Program", "Computing Concepts with JAVA 8 Essentials", "Java Software Solutions", "Java Program Design"};
+    static int[] numOfPhysicalCopies = {5, 0, 5, 5, 1};
+    static boolean[] eBookVersion = {true, true, false, false, true};
+
     public static void main(String[] args) {
         DaintreeA dt = new DaintreeA();
     }
 
     public DaintreeA() {
-        String[] bookTitles = {"Absolute Java", "JAVA: How to Program", "Computing Concepts with JAVA 8 Essentials", "Java Software Solutions", "Java Program Design"};
-        int[] numOfPhysicalCopies = {5, 0, 5, 5, 1};
-        boolean[] eBookVersion = {true, true, false, false, true};
+        int[] shoppingCart = {};
 
-        Scanner input = new Scanner(System.in);
         boolean running = true;
 
         System.out.println("\nWelcome to Daintree!\n");
@@ -40,23 +43,44 @@ public class DaintreeA {
     public void checkInput(int input){
         switch (input){
             case 1:
-                System.out.println("You input 1");
+                addBook();
                 break;
             case 2:
-                System.out.println("You input 2");
+                System.out.println("You input 2\n");
                 break;
             case 3:
-                System.out.println("You input 3");
+                System.out.println("You input 3\n");
                 break;
             case 4:
-                System.out.println("You input 4");
+                System.out.println("You input 4\n");
                 break;
             case 5:
-                System.out.println("You input 5");
+                System.out.println("You input 5\n");
                 break;
             default:
-                System.out.println("Enter only 1,2,3,4,5,0");
+                System.out.println("Sorry, that is an invalid option!\n");
                 break;
         }
+    }
+
+    public void addBook(){
+        System.out.print("Enter title to search for: ");
+        String userInput = input.next();
+
+        int[] indexOfBook = findBookIndex(userInput);
+
+
+    }
+
+    public int[] findBookIndex(String input){
+        int bookIndexes
+
+        for (int i = 0; i < bookTitles.length; i++){
+            if(bookTitles[i].toLowerCase().startsWith(input.toLowerCase())){
+                System.out.println(bookTitles[i]);
+            }
+        }
+
+
     }
 }
